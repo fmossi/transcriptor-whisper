@@ -33,6 +33,19 @@ python transcribir.py "https://www.youtube.com/watch?v=XXXX" --idioma ca --model
 python transcribir.py entrada.mp3 --salida "C:\docs\resultado.docx"
 ```
 
+### Interfaz gráfica
+
+Además de la línea de comandos, hay una interfaz gráfica (Tkinter, incluido en
+Python, sin dependencias adicionales) que reutiliza la misma lógica:
+
+```powershell
+python transcribir_gui.py
+```
+
+Permite elegir el fichero o pegar una URL de YouTube, seleccionar idioma y
+modelo, fijar el documento de salida y seguir el progreso en pantalla. La
+transcripción se ejecuta en segundo plano para que la ventana no se bloquee.
+
 ### Parámetros
 
 
@@ -69,11 +82,14 @@ Para catalán/valenciano los modelos pequeños cometen bastantes errores; por es
 ```
 Whisper/
   transcribir.py        # punto de entrada CLI
+  transcribir_gui.py    # punto de entrada de la interfaz gráfica
   src/
     downloader.py       # descarga audio de YouTube con yt-dlp
     transcriber.py      # transcripción con faster-whisper + refinado de idioma
     idioma.py           # detección heurística castellano/valenciano sobre texto
     exporter.py         # generación del .docx
+    gui/                # interfaz gráfica (Tkinter)
+      app.py            # ventana principal y orquestación en segundo plano
   docs/
     ARQUITECTURA.md     # documentación técnica detallada
   salida/               # documentos generados (por defecto)
