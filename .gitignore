@@ -1,0 +1,31 @@
+# Entorno virtual
+.venv/
+venv/
+env/
+
+# Salida generada
+salida/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Modelos descargados (cache de Hugging Face / faster-whisper)
+models/
+*.bin
+
+# IDE y sistema
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini
+
+# Variables de entorno
+.env
+.env.*
